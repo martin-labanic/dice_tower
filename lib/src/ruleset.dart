@@ -5,8 +5,10 @@ import 'roll_result.dart';
 abstract class Ruleset {
   /// Rolling the dice,
   static RollResult roll;
+
   /// Pretty prints the sum.
   static String prettyPrintSum;
+
   /// Pretty prints the roll details.
   static String prettyPrintSumBreakdown;
 }
