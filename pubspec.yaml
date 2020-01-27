@@ -1,0 +1,42 @@
+name: dice_tower
+description: A new Flutter package project.
+version: 0.5.0
+author: Martin E. Labanic
+homepage: labanic.com
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+  flutter: ">=1.12.13"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  effective_dart: ^1.2.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+#  plugin:
+#    platforms:
+#      android:
+#        package:
+#        pluginClass:
+#      ios:
+#        pluginClass:
+
+  # To add assets to your package, add an assets section, like this:
+  # assets:
+  #  - images/a_dot_burr.jpeg
+  #  - images/a_dot_ham.jpeg
+  #
+  # For details regarding assets in packages, see
+  # https://flutter.dev/assets-and-images/#from-packages
+  #
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
