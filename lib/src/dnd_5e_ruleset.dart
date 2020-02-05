@@ -30,7 +30,7 @@ class Dnd5eRuleset implements Ruleset {
         sum += di.modifier;
         result.rolls.add(diceRolls);
       }
-      result.sum = sum;
+      result.sum = sum >= 0 ? sum : 0; // Minimum is 0 in 5e. https://www.sageadvice.eu/2014/11/14/unarmed-damage/
     } else {
       result = RollResult("Invalid.", []);
     }

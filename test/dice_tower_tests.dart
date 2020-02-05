@@ -22,7 +22,7 @@ void main() {
   test("constructor", () {
     Dice d = Dice(20);
     RollResult r = Dnd5eRuleset.roll([d]);
-    assert(r.title == "D20" && r.sum >= 0 && r.sum <= 20);
+    assert(r.title == "D20" && r.sum >= 1 && r.sum <= 20);
   });
 
   test("customized constructor", () {
@@ -44,7 +44,7 @@ void main() {
     }
     for (int j = 0; j < 11111; j++) {
       r = Dnd5eRuleset.roll([d2]);
-      assert (r.sum >= -21 && r.sum <= 177);
+      assert (r.sum >= 0 && r.sum <= 177);
     }
   });
 
