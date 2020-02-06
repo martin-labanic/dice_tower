@@ -3,7 +3,6 @@ import "package:flutter_test/flutter_test.dart";
 import "package:dice_tower/dice_tower.dart";
 
 void main() {
-
   test('title generation', () {
     Dice d1 = Dice(20);
     assert(d1.generateTitle() == "D20");
@@ -26,7 +25,7 @@ void main() {
   });
 
   test("customized constructor", () {
-    Dice d = Dice(20,modifier: 3, numberOfDice: 5, title: "Hmmmm");
+    Dice d = Dice(20, modifier: 3, numberOfDice: 5, title: "Hmmmm");
     assert(d.title == "Hmmmm");
     assert(d.numberOfDice == 5);
     assert(d.sides == 20);
@@ -44,7 +43,7 @@ void main() {
     }
     for (int j = 0; j < 11111; j++) {
       r = Dnd5eRuleset.roll([d2]);
-      assert (r.sum >= 0 && r.sum <= 177);
+      assert(r.sum >= 0 && r.sum <= 177);
     }
   });
 
@@ -59,15 +58,15 @@ void main() {
     RollResult r;
     for (int i = 0; i < 11111; i++) {
       r = Dnd5eRuleset.roll([d1, d6]);
-      assert (r.sum >= 2 && r.sum <= 24);
+      assert(r.sum >= 2 && r.sum <= 24);
     }
     for (int j = 0; j < 11111; j++) {
       r = Dnd5eRuleset.roll([d2, d5]);
-      assert (r.sum >= 8 && r.sum <= 60);
+      assert(r.sum >= 8 && r.sum <= 60);
     }
     for (int k = 0; k < 11111; k++) {
       r = Dnd5eRuleset.roll([d3, d4]);
-      assert (r.sum >= 3 && r.sum <= 33);
+      assert(r.sum >= 3 && r.sum <= 33);
     }
   });
 }

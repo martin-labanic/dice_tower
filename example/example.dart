@@ -15,6 +15,8 @@ void main(List<String> arguments) async {
   RollResult r2 = Dnd5eRuleset.roll([d1, d2, d3, d4, d5]);
 
   // Pretty printing results.
-  print("Title: ${r1.title}\nSum: ${Dnd5eRuleset.prettyPrintSum(r1)}\nRoll Details: ${Dnd5eRuleset.prettyPrintResultDetails(r1)}");
-  print("Title: ${r2.title}\nSum: ${Dnd5eRuleset.prettyPrintSum(r2)}\nRoll Details: ${Dnd5eRuleset.prettyPrintResultDetails(r2)}");
+  print(
+      "Title: ${r1.title}\nSum: ${Dnd5eRuleset.prettyPrintSum(r1)}\nRoll Details: ${Dnd5eRuleset.prettyPrintResultDetails(r1)}");
+  print(
+      "Title: ${r2.title}\nSum: ${Dnd5eRuleset.prettyPrintSum(r2)}\nRoll Details: ${Dnd5eRuleset.prettyPrintResultDetails(r2)}");
 }
