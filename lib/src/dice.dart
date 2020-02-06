@@ -15,11 +15,7 @@ class Dice {
   ///
   Dice(this.sides,
       {this.modifier = 0, this.numberOfDice = 1, String title = ""}) {
-    if (title.isNotEmpty) {
-      this.title = title;
-    } else {
-      this.title = generateTitle();
-    }
+    this.title = title.isNotEmpty ? title : generateTitle();
   }
 
   /// Generates the title of the roll based on the  dice values.
