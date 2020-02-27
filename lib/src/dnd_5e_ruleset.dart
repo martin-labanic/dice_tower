@@ -17,7 +17,7 @@ class Dnd5eRuleset implements Ruleset {
 
       /// Roll each di the right number of times.
       result = RollResult(title, dice);
-      Random random = Random();
+      Random random = Random.secure();
       int sum = 0;
       for (int i = 0; i < dice.length; i++) {
         Dice di = dice[i];
