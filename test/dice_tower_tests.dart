@@ -39,7 +39,8 @@ void main() {
     RollResult r;
     for (int i = 0; i < 11111; i++) {
       r = Dnd5eRuleset.roll([d1]);
-      assert (r.sum >= 1 && r.sum <= 20);
+      print("${Dnd5eRuleset.prettyPrintSum(r)} | ${Dnd5eRuleset.prettyPrintResultDetails(r)}");
+      assert(r.sum >= 1 && r.sum <= 20);
     }
     for (int j = 0; j < 11111; j++) {
       r = Dnd5eRuleset.roll([d2]);
@@ -62,6 +63,7 @@ void main() {
     }
     for (int j = 0; j < 11111; j++) {
       r = Dnd5eRuleset.roll([d2, d5]);
+      print("${Dnd5eRuleset.prettyPrintSum(r)} | ${Dnd5eRuleset.prettyPrintResultDetails(r)}");
       assert(r.sum >= 8 && r.sum <= 60);
     }
     for (int k = 0; k < 11111; k++) {
