@@ -36,33 +36,42 @@ class Dnd5eRuleset implements Ruleset {
     } else {
       result = RollResult("Invalid.", []);
     }
+
     return result;
   }
 
   /// Pretty prints the sum of the roll result.
   static String prettyPrintSum(RollResult roll) {
     String result = "";
-    if (roll.rolls.isNotEmpty) {
-      if (roll.dicePool.length == 1 &&
-          roll.dicePool[0].numberOfDice == 1 &&
-          roll.dicePool[0].sides == 20) {
-        if (roll.rolls[0][0] == 1) {
-          result = "natural 1";
-        } else if (roll.rolls[0][0] == 20) {
-          result = "natural 20";
-        } else {
-          result = roll.sum.toString();
-        }
+    if (roll == null || roll.dicePool == null || roll.rolls.isEmpty || roll.dicePool.isEmpty) {
+      return result;
+    }
+
+    if (roll.dicePool.length == 1 &&
+        roll.dicePool[0].numberOfDice == 1 &&
+        roll.dicePool[0].sides == 20) {
+      if (roll.rolls[0][0] == 1) {
+        result = "natural 1";
+      } else if (roll.rolls[0][0] == 20) {
+        result = "natural 20";
       } else {
         result = roll.sum.toString();
       }
+    } else {
+      result = roll.sum.toString();
     }
+
     return result;
   }
 
   /// Pretty prints the a breakdown of the roll results.
   /// ex:
   static String prettyPrintResultDetails(RollResult roll) {
+    String result = "";
+    if (roll == null || roll.rolls == null || roll.rolls.isEmpty) {
+      return result;
+    }
+
     StringBuffer stringBuffer = StringBuffer();
     stringBuffer.write("");
     for (int i = 0; i < roll.rolls.length; i++) {
@@ -75,6 +84,8 @@ class Dnd5eRuleset implements Ruleset {
             .write(di.modifier > 0 ? "+${di.modifier}" : "${di.modifier}");
       }
     }
-    return stringBuffer.toString().substring(1);
+    result = stringBuffer.toString().substring(1);
+
+    return result;
   }
 }
