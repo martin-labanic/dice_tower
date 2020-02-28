@@ -43,7 +43,10 @@ class Dnd5eRuleset implements Ruleset {
   /// Pretty prints the sum of the roll result.
   static String prettyPrintSum(RollResult roll) {
     String result = "";
-    if (roll == null || roll.dicePool == null || roll.rolls.isEmpty || roll.dicePool.isEmpty) {
+    if (roll == null ||
+        roll.dicePool == null ||
+        roll.rolls.isEmpty ||
+        roll.dicePool.isEmpty) {
       return result;
     }
 
