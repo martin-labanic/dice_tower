@@ -1,3 +1,7 @@
+## [0.5.3+1] - 2020/02/28
+- Updated pubspec description.
+- Minor formatting.
+
 ## [0.5.3] - 2020/02/27
 - Improved description.
 
