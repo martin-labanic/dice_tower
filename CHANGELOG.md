@@ -1,4 +1,4 @@
-## [0.5.3] - 2020/02/027
+## [0.5.3] - 2020/02/27
 - Improved description.
 
 - D&D 5e ruleset:

@@ -1,5 +1,5 @@
 name: dice_tower
-description: A flutter dice rolling package.
+description: A flutter package for rolling dice using the rules for various table top games.
 version: 0.5.3
 homepage: https://github.com/martin-labanic/dice_tower
 
