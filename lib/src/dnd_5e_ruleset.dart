@@ -30,7 +30,7 @@ class Dnd5eRuleset implements Ruleset {
         sum += di.modifier;
         result.rolls.add(diceRolls);
       }
-      result.sum = sum >= 0
+      result.result = sum >= 0
           ? sum
           : 0; // Minimum is 0 in 5e. https://www.sageadvice.eu/2014/11/14/unarmed-damage/
     } else {
@@ -41,7 +41,7 @@ class Dnd5eRuleset implements Ruleset {
   }
 
   /// Pretty prints the sum of the roll result.
-  static String prettyPrintSum(RollResult roll) {
+  static String prettyPrintResult(RollResult roll) {
     String result = "";
     if (roll == null ||
         roll.dicePool == null ||
@@ -58,10 +58,10 @@ class Dnd5eRuleset implements Ruleset {
       } else if (roll.rolls[0][0] == 20) {
         result = "natural 20";
       } else {
-        result = roll.sum.toString();
+        result = roll.result.toString();
       }
     } else {
-      result = roll.sum.toString();
+      result = roll.result.toString();
     }
 
     return result;

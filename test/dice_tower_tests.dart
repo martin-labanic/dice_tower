@@ -21,7 +21,7 @@ void main() {
   test("constructor", () {
     Dice d = Dice(20);
     RollResult r = Dnd5eRuleset.roll([d]);
-    assert(r.title == "D20" && r.sum >= 1 && r.sum <= 20);
+    assert(r.title == "D20" && r.result >= 1 && r.result <= 20);
   });
 
   test("customized constructor", () {
@@ -39,12 +39,12 @@ void main() {
     RollResult r;
     for (int i = 0; i < 11111; i++) {
       r = Dnd5eRuleset.roll([d1]);
-      print("${Dnd5eRuleset.prettyPrintSum(r)} | ${Dnd5eRuleset.prettyPrintResultDetails(r)}");
-      assert(r.sum >= 1 && r.sum <= 20);
+      print("${Dnd5eRuleset.prettyPrintResult(r)} | ${Dnd5eRuleset.prettyPrintResultDetails(r)}");
+      assert(r.result >= 1 && r.result <= 20);
     }
     for (int j = 0; j < 11111; j++) {
       r = Dnd5eRuleset.roll([d2]);
-      assert(r.sum >= 0 && r.sum <= 177);
+      assert(r.result >= 0 && r.result <= 177);
     }
   });
 
@@ -59,16 +59,16 @@ void main() {
     RollResult r;
     for (int i = 0; i < 11111; i++) {
       r = Dnd5eRuleset.roll([d1, d6]);
-      assert(r.sum >= 2 && r.sum <= 24);
+      assert(r.result >= 2 && r.result <= 24);
     }
     for (int j = 0; j < 11111; j++) {
       r = Dnd5eRuleset.roll([d2, d5]);
-      print("${Dnd5eRuleset.prettyPrintSum(r)} | ${Dnd5eRuleset.prettyPrintResultDetails(r)}");
-      assert(r.sum >= 8 && r.sum <= 60);
+      print("${Dnd5eRuleset.prettyPrintResult(r)} | ${Dnd5eRuleset.prettyPrintResultDetails(r)}");
+      assert(r.result >= 8 && r.result <= 60);
     }
     for (int k = 0; k < 11111; k++) {
       r = Dnd5eRuleset.roll([d3, d4]);
-      assert(r.sum >= 3 && r.sum <= 33);
+      assert(r.result >= 3 && r.result <= 33);
     }
   });
 }

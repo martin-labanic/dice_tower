@@ -12,7 +12,7 @@ class RollResult {
   List<List<int>> rolls = [];
 
   /// Stored so it doesn't need to be added up each time.
-  int sum = 0;
+  int result = 0;
 
   /// Constructor.
   RollResult(this.title, this.dicePool);

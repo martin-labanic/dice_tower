@@ -16,7 +16,7 @@ void main(List<String> arguments) async {
 
   // Pretty printing results.
   print(
-      "Title: ${r1.title}\nSum: ${Dnd5eRuleset.prettyPrintSum(r1)}\nRoll Details: ${Dnd5eRuleset.prettyPrintResultDetails(r1)}");
+      "Title: ${r1.title}\nSum: ${Dnd5eRuleset.prettyPrintResult(r1)}\nRoll Details: ${Dnd5eRuleset.prettyPrintResultDetails(r1)}");
   print(
-      "Title: ${r2.title}\nSum: ${Dnd5eRuleset.prettyPrintSum(r2)}\nRoll Details: ${Dnd5eRuleset.prettyPrintResultDetails(r2)}");
+      "Title: ${r2.title}\nSum: ${Dnd5eRuleset.prettyPrintResult(r2)}\nRoll Details: ${Dnd5eRuleset.prettyPrintResultDetails(r2)}");
 }

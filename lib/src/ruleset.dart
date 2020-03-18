@@ -7,8 +7,9 @@ abstract class Ruleset {
   static RollResult roll;
 
   /// Pretty prints the sum.
-  static String prettyPrintSum;
+  static String prettyPrintResult;
 
   /// Pretty prints the roll details.
-  static String prettyPrintSumBreakdown;
+  static String prettyPrintResultDetails
+  ;
 }
