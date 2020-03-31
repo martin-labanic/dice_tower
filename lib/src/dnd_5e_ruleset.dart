@@ -5,8 +5,8 @@ import "ruleset.dart";
 
 /// Ruleset for Dungeons & Dragons 5th Edition.
 class Dnd5eRuleset implements Ruleset {
-  /// Rolls the provided dice.
-  static RollResult roll(List<Dice> dice, {String title = ""}) {
+  // Rolls the provided dice.
+  static RollResult roll(List<Dice> dice, {String title = "", SortOrder sortOrder}) {
     RollResult result;
     if (dice.isNotEmpty) {
       /// Generate the title if one was not provided.
@@ -35,6 +35,11 @@ class Dnd5eRuleset implements Ruleset {
           : 0; // Minimum is 0 in 5e. https://www.sageadvice.eu/2014/11/14/unarmed-damage/
     } else {
       result = RollResult("Invalid.", []);
+    }
+
+    // Sort the rolls.
+    if (sortOrder != null) {
+      result.sortRolls(sortOrder);
     }
 
     return result;
