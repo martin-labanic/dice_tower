@@ -10,6 +10,5 @@ abstract class Ruleset {
   static String prettyPrintResult;
 
   /// Pretty prints the roll details.
-  static String prettyPrintResultDetails
-  ;
+  static String prettyPrintResultDetails;
 }

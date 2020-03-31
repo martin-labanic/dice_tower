@@ -9,19 +9,19 @@ class Dnd5eRuleset implements Ruleset {
   static RollResult roll(List<Dice> dice, {String title = "", SortOrder sortOrder}) {
     RollResult result;
     if (dice.isNotEmpty) {
-      /// Generate the title if one was not provided.
+      // Generate the title if one was not provided.
       if (title.isEmpty) {
         dice.forEach((di) => title += " + " + di.title);
         title = title.substring(3);
       }
 
-      /// Roll each di the right number of times.
+      // Roll each di the right number of times.
       result = RollResult(title, dice);
       Random random = Random.secure();
       int sum = 0;
       for (int i = 0; i < dice.length; i++) {
         Dice di = dice[i];
-        List<int> diceRolls = []; //List(di.numberOfDice);
+        List<int> diceRolls = [];
         for (int j = 0; j < di.numberOfDice; j++) {
           int toss = random.nextInt(di.sides) + 1;
           sum += toss;
