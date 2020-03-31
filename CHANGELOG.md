@@ -1,3 +1,9 @@
+## [0.6.0] - 2020/03/30
+- Added sorting options.
+    - Limitation: Currently this only works correctly if you're not using more than one type of di.
+- Breaking change:
+    - Refactored function names: `prettyPrintSum` -> `prettyPrintResult`, `prettyPrintSumBreakdown` -> `prettyPrintResultDetails`.
+
 ## [0.5.3+1] - 2020/02/28
 - Updated pubspec description.
 - Minor formatting.
