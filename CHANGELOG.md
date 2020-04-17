@@ -1,3 +1,8 @@
+## [0.6.5] - 20/04/16
+- Added `None` sort order as a sort option.
+- Added the `useSecureRandom` parameter to the `roll` function.
+- Improved comments.
+
 ## [0.6.0] - 2020/03/30
 - Added sorting options.
     - Limitation: Currently this only works correctly if you're not using more than one type of di.
