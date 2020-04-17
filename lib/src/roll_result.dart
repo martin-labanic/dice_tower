@@ -24,6 +24,7 @@ class RollResult {
   RollResult(this.title, this.dicePool);
 
   /// Sorts the roll result.
+  /// [sortOrder] Sort order to apply to the roll result.
   bool sortRolls(SortOrder sortOrder) {
     bool sorted = false;
     if (sortOrder == null || sortOrder == SortOrder.None) {

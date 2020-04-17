@@ -5,7 +5,11 @@ import "ruleset.dart";
 
 /// Ruleset for Dungeons & Dragons 5th Edition.
 class Dnd5eRuleset implements Ruleset {
-  // Rolls the provided dice.
+  /// Rolls the provided dice.
+  /// [dice] A list of dice to roll.
+  /// [title] The title of roll. It will generate one if its not provided.
+  /// [sortOrder] Sort order to apply to the roll result.
+  /// [useSecureRandom] Option to use [Random] or [Random.secure] when generating random numbers.
   static RollResult roll(List<Dice> dice, {String title = "", SortOrder sortOrder = SortOrder.None, bool useSecureRandom = false}) {
     RollResult result;
     if (dice.isNotEmpty) {
@@ -46,6 +50,7 @@ class Dnd5eRuleset implements Ruleset {
   }
 
   /// Pretty prints the sum of the roll result.
+  /// [roll] The roll result.
   static String prettyPrintResult(RollResult roll) {
     String result = "";
     if (roll == null ||
@@ -73,6 +78,7 @@ class Dnd5eRuleset implements Ruleset {
   }
 
   /// Pretty prints the a breakdown of the roll results.
+  /// [roll] The roll result.
   /// ex:
   static String prettyPrintResultDetails(RollResult roll) {
     String result = "";
