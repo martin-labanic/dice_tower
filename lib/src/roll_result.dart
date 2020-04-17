@@ -1,4 +1,4 @@
-import 'dice.dart';
+import "dice.dart";
 
 enum SortOrder {
   None,

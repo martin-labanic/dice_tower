@@ -1,4 +1,4 @@
-import 'roll_result.dart';
+import "roll_result.dart";
 
 /// All of the rulesets should have these basic functions definded.
 // ignore: avoid_classes_with_only_static_members

@@ -7,6 +7,7 @@ analyzer:
 
 linter:
   rules:
+    prefer_double_quotes: true # Prefer double quotes
     omit_local_variable_types: false
     lines_longer_than_80_chars: false
     await_only_futures: true

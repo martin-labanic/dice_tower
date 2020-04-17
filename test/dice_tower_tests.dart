@@ -3,7 +3,7 @@ import "package:flutter_test/flutter_test.dart";
 import "package:dice_tower/dice_tower.dart";
 
 void main() {
-  test('title generation', () {
+  test("title generation", () {
     Dice d1 = Dice(20);
     assert(d1.generateTitle() == "D20");
     Dice d2 = Dice(12, numberOfDice: 2);
