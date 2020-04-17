@@ -1,6 +1,7 @@
 import 'dice.dart';
 
 enum SortOrder {
+  None,
   Ascending,
   Descending
 }
@@ -25,7 +26,7 @@ class RollResult {
   /// Sorts the roll result.
   bool sortRolls(SortOrder sortOrder) {
     bool sorted = false;
-    if (sortOrder == null) {
+    if (sortOrder == null || sortOrder == SortOrder.None) {
       return sorted;
     }
 

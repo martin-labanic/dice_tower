@@ -6,7 +6,7 @@ import "ruleset.dart";
 /// Ruleset for Dungeons & Dragons 5th Edition.
 class Dnd5eRuleset implements Ruleset {
   // Rolls the provided dice.
-  static RollResult roll(List<Dice> dice, {String title = "", SortOrder sortOrder}) {
+  static RollResult roll(List<Dice> dice, {String title = "", SortOrder sortOrder = SortOrder.None, bool useSecureRandom = false}) {
     RollResult result;
     if (dice.isNotEmpty) {
       // Generate the title if one was not provided.
@@ -17,7 +17,7 @@ class Dnd5eRuleset implements Ruleset {
 
       // Roll each di the right number of times.
       result = RollResult(title, dice);
-      Random random = Random.secure();
+      Random random = useSecureRandom ? Random.secure() : Random();
       int sum = 0;
       for (int i = 0; i < dice.length; i++) {
         Dice di = dice[i];
@@ -38,7 +38,7 @@ class Dnd5eRuleset implements Ruleset {
     }
 
     // Sort the rolls.
-    if (sortOrder != null) {
+    if (sortOrder != SortOrder.None) {
       result.sortRolls(sortOrder);
     }
 
