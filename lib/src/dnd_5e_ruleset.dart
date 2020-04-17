@@ -10,7 +10,10 @@ class Dnd5eRuleset implements Ruleset {
   /// [title] The title of roll. It will generate one if its not provided.
   /// [sortOrder] Sort order to apply to the roll result.
   /// [useSecureRandom] Option to use [Random] or [Random.secure] when generating random numbers.
-  static RollResult roll(List<Dice> dice, {String title = "", SortOrder sortOrder = SortOrder.None, bool useSecureRandom = false}) {
+  static RollResult roll(List<Dice> dice,
+      {String title = "",
+      SortOrder sortOrder = SortOrder.None,
+      bool useSecureRandom = false}) {
     RollResult result;
     if (dice.isNotEmpty) {
       // Generate the title if one was not provided.

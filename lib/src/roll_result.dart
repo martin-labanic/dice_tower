@@ -1,10 +1,6 @@
 import "dice.dart";
 
-enum SortOrder {
-  None,
-  Ascending,
-  Descending
-}
+enum SortOrder { None, Ascending, Descending }
 
 /// Result from rolling some dice.
 class RollResult {
