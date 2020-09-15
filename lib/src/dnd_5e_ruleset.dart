@@ -28,18 +28,14 @@ class Dnd5eRuleset implements Ruleset {
       int sum = 0;
       for (int i = 0; i < dice.length; i++) {
         Dice di = dice[i];
-        List<int> diceRolls = [];
         for (int j = 0; j < di.numberOfDice; j++) {
           int toss = random.nextInt(di.sides) + 1;
           sum += toss;
-          diceRolls.add(toss); // Max exclusive, 0 inclusive.
+          result.rolls.add(toss); // Max exclusive, 0 inclusive.
         }
         sum += di.modifier;
-        result.rolls.add(diceRolls);
       }
-      result.result = sum >= 0
-          ? sum
-          : 0; // Minimum is 0 in 5e. https://www.sageadvice.eu/2014/11/14/unarmed-damage/
+      result.result = sum >= 0 ? sum : 0; // Minimum is 0 in 5e. https://www.sageadvice.eu/2014/11/14/unarmed-damage/
     } else {
       result = RollResult("Invalid.", []);
     }
@@ -66,9 +62,9 @@ class Dnd5eRuleset implements Ruleset {
     if (roll.dicePool.length == 1 &&
         roll.dicePool[0].numberOfDice == 1 &&
         roll.dicePool[0].sides == 20) {
-      if (roll.rolls[0][0] == 1) {
+      if (roll.rolls[0] == 1) {
         result = "natural 1";
-      } else if (roll.rolls[0][0] == 20) {
+      } else if (roll.rolls[0] == 20) {
         result = "natural 20";
       } else {
         result = roll.result.toString();
@@ -91,15 +87,16 @@ class Dnd5eRuleset implements Ruleset {
 
     StringBuffer stringBuffer = StringBuffer();
     stringBuffer.write("");
+    var value = "";
     for (int i = 0; i < roll.rolls.length; i++) {
-      Dice di = roll.dicePool[i];
-      roll.rolls[i].forEach((roll) {
-        stringBuffer.write("+$roll");
-      });
-      if (di.modifier != 0) {
-        stringBuffer
-            .write(di.modifier > 0 ? "+${di.modifier}" : "${di.modifier}");
+      stringBuffer.write("+${roll.rolls[i]}");
+    }
+    for (int i = 0; i < roll.dicePool.length; i++) {
+      if (roll.dicePool[i].modifier == 0) { // Do not put 0s in here.
+        continue;
       }
+      value = roll.dicePool[i].modifier > 0 ? "+${roll.dicePool[i].modifier}" : "${roll.dicePool[i].modifier}";
+      stringBuffer.write(value);
     }
     result = stringBuffer.toString().substring(1);
 

@@ -11,7 +11,7 @@ class RollResult {
   List<Dice> dicePool = [];
 
   /// The results of the roll.
-  List<List<int>> rolls = [];
+  List<int> rolls = [];
 
   /// Stored so it doesn't need to be calculated each time.
   int result = 0;
@@ -28,17 +28,14 @@ class RollResult {
     }
 
     if (sortOrder == SortOrder.Ascending) {
-      for (List<int> r in rolls) {
-        r.sort(); // Default is ascending.
-      }
+      rolls.sort();
       sorted = true;
     } else if (sortOrder == SortOrder.Descending) {
-      for (List<int> r in rolls) {
-        r.sort((a, b) => b.compareTo(a));
-      }
+      rolls.sort((a, b) => b.compareTo(a));
       sorted = true;
     }
 
     return sorted;
   }
 }
+//23-26b

@@ -55,19 +55,31 @@ void main() {
     Dice d4 = Dice(8, modifier: 1, numberOfDice: 3);
     Dice d5 = Dice(6, numberOfDice: 6);
     Dice d6 = Dice(4);
+//    Dice d1 = Dice(20);
+//    Dice d2 = Dice(12, numberOfDice: 2);
+//    Dice d3 = Dice(10,);
+//    Dice d4 = Dice(8, numberOfDice: 3);
+//    Dice d5 = Dice(6, numberOfDice: 6);
+//    Dice d6 = Dice(4);
 
     RollResult r;
     for (int i = 0; i < 11111; i++) {
-      r = Dnd5eRuleset.roll([d1, d6]);
+      r = Dnd5eRuleset.roll([d1, d6], sortOrder: SortOrder.Ascending);
+      print("ASC ${Dnd5eRuleset.prettyPrintResult(r)} | ${Dnd5eRuleset.prettyPrintResultDetails(r)}");
       assert(r.result >= 2 && r.result <= 24);
     }
     for (int j = 0; j < 11111; j++) {
       r = Dnd5eRuleset.roll([d2, d5]);
-      print("${Dnd5eRuleset.prettyPrintResult(r)} | ${Dnd5eRuleset.prettyPrintResultDetails(r)}");
       assert(r.result >= 8 && r.result <= 60);
     }
     for (int k = 0; k < 11111; k++) {
-      r = Dnd5eRuleset.roll([d3, d4]);
+      r = Dnd5eRuleset.roll([d3, d4], sortOrder: SortOrder.Descending);
+      print("DESC ${Dnd5eRuleset.prettyPrintResult(r)} | ${Dnd5eRuleset.prettyPrintResultDetails(r)}");
+      assert(r.result >= 3 && r.result <= 33);
+    }
+    for (int k = 0; k < 11111; k++) {
+      r = Dnd5eRuleset.roll([d3, d4], sortOrder: SortOrder.Ascending);
+      print("ASC2 ${Dnd5eRuleset.prettyPrintResult(r)} | ${Dnd5eRuleset.prettyPrintResultDetails(r)}");
       assert(r.result >= 3 && r.result <= 33);
     }
   });
